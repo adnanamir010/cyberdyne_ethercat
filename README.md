@@ -1,14 +1,15 @@
 # cyberdyne_ethercat
-#Installing Skynet Cyberdyne Project
-The Downloads
+
+
+## **The Downloads** 
 1.	Debian Buster Cyberdyne Image: https://github.com/grotius-cnc/LINUX_RTOS/releases/tag/1.0.0
 2.	Software files (important to match versions): https://sourceforge.net/projects/skynet-software/files/skynet_soft-1.0.tar.gz/download
 3.	Skynet Project: https://github.com/grotius-cnc/skynet_robot_control_rtos_ethercat/releases/download/1.0.23/Skynet_Project-13.tar.gz
 
-#Setting up the OS
+## **Setting up the OS**
 
 
-#Installing Software Files
+## **Installing Software Files**
 Type ip a and figure out the name of the Ethernet port you want to use for ethercat
 ![image](https://github.com/adnanamir010/cyberdyne_ethercat/assets/80971069/1152c13c-34f3-4847-8da4-1e38824a5a2b)
  
@@ -24,7 +25,7 @@ Replace the device name mentioned there with your own
 
 Save and exit
 
-#Fixing Qt
+## **Fixing Qt**
 export QT_SELECT=qt5
 In a terminal type: sudo nano /usr/lib/x86_64-linux-gnu/qtchooser/qt5.conf
 When it opens replace the first line with /usr/local/include/qt/5.15.1/gcc_64/bin/
@@ -32,7 +33,7 @@ Now copy the contents of this file and create a file called default.conf in the 
 Paste the contents of qt5.conf in default.conf
 Run qmake –version to verify that you are using Qt version 5.15.1 in /usr/local/include/qt/5.15.1/gcc_64/lib
 
-#Compiling the project
+## **Compiling the project**
 qmake 'QMAKE_CFLAGS_ISYSTEM=-I'.
 export LD_LIBRARY_PATH=/usr/local/lib
 . /usr/local/include/linuxcnc-rip/scripts/rip-environment
